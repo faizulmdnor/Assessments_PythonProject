@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8aaad01a-6789-4473-8554-48ed8e5a2809" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Generate_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Assessments_PythonProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Assessments_PythonProject.iml" afterDir="false" />
+    <list default="true" id="8aaad01a-6789-4473-8554-48ed8e5a2809" name="Changes" comment="SQL assessments">
+      <change afterPath="$PROJECT_DIR$/genarate_data_2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generate_data_3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Python_Assessments.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python_Assessments.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL_assessments_questions.docx" beforeDir="false" afterPath="$PROJECT_DIR$/SQL_assessments_questions.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine_output_with_dst.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +25,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -55,14 +61,19 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.Generate_data.executor": "Run",
     "Python.Python_Assessments.executor": "Run",
+    "Python.genarate_data_2.executor": "Run",
+    "Python.generate_data_3.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "donggeng",
     "ignore.virus.scanning.warn.message": "true"
+  },
+  "keyToStringList": {
+    "stardust.markdown.MarkdownSplitEditorSuppressor:keyList": []
   }
 }]]></component>
-  <component name="RunManager" selected="Python.Generate_data">
+  <component name="RunManager" selected="Python.Python_Assessments">
     <configuration name="Generate_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Assessments_PythonProject" />
       <option name="ENV_FILES" value="" />
@@ -107,10 +118,56 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="genarate_data_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Assessments_PythonProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/genarate_data_2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="generate_data_3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Assessments_PythonProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/generate_data_3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Generate_data" />
         <item itemvalue="Python.Python_Assessments" />
+        <item itemvalue="Python.generate_data_3" />
+        <item itemvalue="Python.genarate_data_2" />
+        <item itemvalue="Python.Generate_data" />
       </list>
     </recent_temporary>
   </component>
@@ -129,6 +186,28 @@
       <option name="presentableId" value="Default" />
       <updated>1746717743036</updated>
     </task>
+    <task id="LOCAL-00001" summary="create data">
+      <option name="closed" value="true" />
+      <created>1746755931734</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1746755931734</updated>
+    </task>
+    <task id="LOCAL-00002" summary="SQL assessments">
+      <option name="closed" value="true" />
+      <created>1746758632564</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1746758632564</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="create data" />
+    <MESSAGE value="SQL assessments" />
+    <option name="LAST_COMMIT_MESSAGE" value="SQL assessments" />
   </component>
 </project>
