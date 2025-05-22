@@ -6,7 +6,7 @@ matplotlib.use('TkAgg')
 
 # Data Preparation
 data = {
-    'Name': ['Abdul Karim', 'Rizaruddin', 'Jamal', 'Suhaila', 'Jenifer Wong', 'Linda', 'Premala devi'],
+    'Name': ['Abdul Karim', 'Dadarruddin', 'Jamaluddin', 'Zalikha', 'Jenifer Wong', 'Linda', 'Premala devi'],
     'Age': [55, 25, 28, 51, 26, 23, 35],
     'Height (cm)': [175, 169, 174, 160, 162, np.nan, 167],
     'Weight (kg)': [85, 75, 95, 58, 60, 67, np.nan]

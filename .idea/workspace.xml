@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8aaad01a-6789-4473-8554-48ed8e5a2809" name="Changes" comment="SQL assessments">
-      <change afterPath="$PROJECT_DIR$/genarate_data_2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generate_data_3.py" afterDir="false" />
+    <list default="true" id="8aaad01a-6789-4473-8554-48ed8e5a2809" name="Changes" comment="Python and SQL assessments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Python_Assessments.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python_Assessments.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL_assessments_questions.docx" beforeDir="false" afterPath="$PROJECT_DIR$/SQL_assessments_questions.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machine_output_with_dst.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL_Assessment_Questions_2.docx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,24 +52,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.Generate_data.executor": "Run",
-    "Python.Python_Assessments.executor": "Run",
-    "Python.genarate_data_2.executor": "Run",
-    "Python.generate_data_3.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "donggeng",
-    "ignore.virus.scanning.warn.message": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.Generate_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Python_Assessments.executor&quot;: &quot;Run&quot;,
+    &quot;Python.genarate_data_2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_data_3.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;donggeng&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "stardust.markdown.MarkdownSplitEditorSuppressor:keyList": []
+  &quot;keyToStringList&quot;: {
+    &quot;stardust.markdown.MarkdownSplitEditorSuppressor:keyList&quot;: []
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.Python_Assessments">
     <configuration name="Generate_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Assessments_PythonProject" />
