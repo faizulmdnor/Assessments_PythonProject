@@ -1,0 +1,124 @@
+Index: Python_Assessments.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import matplotlib\r\nimport pandas as pd\r\nimport numpy as np\r\nimport matplotlib.pyplot as plt\r\nmatplotlib.use('TkAgg')\r\n\r\n# Data Preparation\r\ndata = {\r\n    'Name': ['Abdul Karim', 'Rizaruddin', 'Jamal', 'Suhaila', 'Jenifer Wong', 'Linda', 'Premala devi'],\r\n    'Age': [55, 25, 28, 51, 26, 23, 35],\r\n    'Height (cm)': [175, 169, 174, 160, 162, np.nan, 167],\r\n    'Weight (kg)': [85, 75, 95, 58, 60, 67, np.nan]\r\n}\r\n\r\n# Q1 - Using pandas create dataframe and print\r\n# Points: 5 (Beginner)\r\ndf = pd.DataFrame(data)\r\nprint(f\"Q1 - Dataframe:\\n{df}\")\r\n\r\n# Q2 - Replace NaN with 0\r\n# Points: 5 (Beginner)\r\ndf_filled = df.fillna(0)\r\nprint('\\nQ2 - New DataFrame after replacing NaN with 0:')\r\nprint(df_filled)\r\n\r\n# Q3 - Modify the DataFrame to add a new column 'BMI' using the formula: weight (kg) / (height in m)^2. Handle rows with missing data appropriately (NaN).\r\n# Points: 12 (Intermediate)\r\nprint('\\nQ3 - Remove NaN, add columns Height (m) and BMI:')\r\ndf.dropna(subset=['Height (cm)', 'Weight (kg)'], inplace=True)\r\ndf['Height (m)'] = df['Height (cm)']/100\r\ndf['BMI'] = df['Weight (kg)']/df['Height (m)']**2\r\nprint(df)\r\n\r\n# Q4 - Load data from production_output.csv\r\n# Points: 8 (Intermediate)\r\nprod_data = pd.read_csv('production_output.csv')\r\nprint(f\"\\nQ4 - Load production data from csv:\")\r\nprint(prod_data)\r\n\r\n# Q5 - Total output per day (Group by date and sum output/input)\r\n# Points: 15 (Intermediate)\r\ndf_prod_data_day = prod_data.groupby(by=['date'])[['output','input']].sum().reset_index()\r\ndf_prod_data_day.rename(columns={'output': 'Total_output', 'input': 'Total_input'}, inplace=True)\r\nprint(f\"\\nQ5 - Total output and input by day:\\n{df_prod_data_day}\")\r\n\r\n# Q6 - Average output per hour (assuming 24 hours of operation per day)\r\n# Points: 15 (Intermediate)\r\ndf_prod_data_day['Average output per hour'] = (df_prod_data_day['Total_output']/24).round(3)\r\nprint(\"\\nQ6 - Average output per hour:\")\r\nprint(df_prod_data_day.to_string(index=False))\r\n\r\n# Q6 Add column yield percentage (Total output / Total input) * 100\r\n# Points: 15 (Intermediate)\r\ndf_prod_data_day['Yield (%)'] = (df_prod_data_day['Total_output'] / df_prod_data_day['Total_input'] * 100).round(2)\r\nprint(\"\\nAdd column yield percentage\")\r\nprint(df_prod_data_day)\r\n\r\n# Q7 - Plotting with multiple y-axes (Bar chart and Line plot)\r\n# Points: 40 (Advanced)\r\n# Step 2: Set up figure and axes\r\nfig, ax1 = plt.subplots(figsize=(12, 6))\r\n\r\n# Bar chart: Total Output\r\nax1.bar(df_prod_data_day['date'], df_prod_data_day['Total_output'], color='skyblue', label='Total Output')\r\nax1.set_xlabel('Date')\r\nax1.set_ylabel('Total Output', color='skyblue')\r\nax1.tick_params(axis='y', labelcolor='skyblue')\r\nax1.set_xticklabels(df_prod_data_day['date'], rotation=90)\r\n\r\n# Step 3: Add a secondary y-axis for Yield (%)\r\nax2 = ax1.twinx()\r\nax2.plot(df_prod_data_day['date'], df_prod_data_day['Yield (%)'], color='orange', marker='o', label='Yield (%)')\r\nax2.set_ylabel('Yield (%)', color='orange')\r\nax2.tick_params(axis='y', labelcolor='orange')\r\nax2.set_ylim(70, 100)\r\n\r\n# Title and layout\r\nplt.title('Daily Total Output and Yield Percentage')\r\nfig.tight_layout()\r\n\r\n# Save before plt.show() (best practice)\r\nplt.savefig('daily_output_chart.png', dpi=300)\r\n\r\n# Show plot\r\nplt.show()\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Python_Assessments.py b/Python_Assessments.py
+--- a/Python_Assessments.py	(revision 2a53292702fdfa1d00d5220abe7a4c48e79c9141)
++++ b/Python_Assessments.py	(date 1747060685787)
+@@ -6,7 +6,7 @@
+ 
+ # Data Preparation
+ data = {
+-    'Name': ['Abdul Karim', 'Rizaruddin', 'Jamal', 'Suhaila', 'Jenifer Wong', 'Linda', 'Premala devi'],
++    'Name': ['Abdul Karim', 'Dadarruddin', 'Jamaluddin', 'Zalikha', 'Jenifer Wong', 'Linda', 'Premala devi'],
+     'Age': [55, 25, 28, 51, 26, 23, 35],
+     'Height (cm)': [175, 169, 174, 160, 162, np.nan, 167],
+     'Weight (kg)': [85, 75, 95, 58, 60, 67, np.nan]
+Index: LongCommonSubsequence.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/LongCommonSubsequence.py b/LongCommonSubsequence.py
+new file mode 100644
+--- /dev/null	(date 1747795340690)
++++ b/LongCommonSubsequence.py	(date 1747795340690)
+@@ -0,0 +1,28 @@
++X = "XMJYAUZ"
++Y = "MZJAWXU"
++
++m, n = len(X), len(Y)
++dp = [[0] * (n + 1) for c in range(m + 1)]
++
++# Fill DP table
++for i in range(1, m + 1):
++    for j in range(1, n + 1):
++        if X[i - 1] == Y[j - 1]:
++            dp[i][j] = dp[i - 1][j - 1] + 1
++        else:
++            dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
++
++# Reconstruct LCS
++longcommonsubs = []
++i, j = m, n
++while i > 0 and j > 0:
++    if X[i - 1] == Y[j - 1]:
++        longcommonsubs.append(X[i - 1])
++        i -= 1
++        j -= 1
++    elif dp[i - 1][j] > dp[i][j - 1]:
++        i -= 1
++    else:
++        j -= 1
++
++print(''.join(reversed(longcommonsubs)))
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"8aaad01a-6789-4473-8554-48ed8e5a2809\" name=\"Changes\" comment=\"SQL assessments\">\r\n      <change afterPath=\"$PROJECT_DIR$/genarate_data_2.py\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/generate_data_3.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Python_Assessments.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Python_Assessments.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/SQL_assessments_questions.docx\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/SQL_assessments_questions.docx\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/machine_output_with_dst.csv\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;faizulmdnor&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/faizulmdnor/Assessments_PythonProject.git&quot;,\r\n    &quot;accountId&quot;: &quot;29093ef2-2039-4bd6-8dfb-c494fd32d12a&quot;\r\n  }\r\n}</component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/.venv/pyvenv.cfg\" root0=\"SKIP_INSPECTION\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 1\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2wopNiX9WzdFarGgERb7L7BcCuu\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"ASKED_SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"ModuleVcsDetector.initialDetectionPerformed\": \"true\",\r\n    \"Python.Generate_data.executor\": \"Run\",\r\n    \"Python.Python_Assessments.executor\": \"Run\",\r\n    \"Python.genarate_data_2.executor\": \"Run\",\r\n    \"Python.generate_data_3.executor\": \"Run\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"git-widget-placeholder\": \"donggeng\",\r\n    \"ignore.virus.scanning.warn.message\": \"true\"\r\n  },\r\n  \"keyToStringList\": {\r\n    \"stardust.markdown.MarkdownSplitEditorSuppressor:keyList\": []\r\n  }\r\n}]]></component>\r\n  <component name=\"RunManager\" selected=\"Python.Python_Assessments\">\r\n    <configuration name=\"Generate_data\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Assessments_PythonProject\" />\r\n      <option name=\"ENV_FILES\" value=\"\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/Generate_data.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"Python_Assessments\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Assessments_PythonProject\" />\r\n      <option name=\"ENV_FILES\" value=\"\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/Python_Assessments.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"genarate_data_2\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Assessments_PythonProject\" />\r\n      <option name=\"ENV_FILES\" value=\"\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/genarate_data_2.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"generate_data_3\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Assessments_PythonProject\" />\r\n      <option name=\"ENV_FILES\" value=\"\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/generate_data_3.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Python.Python_Assessments\" />\r\n        <item itemvalue=\"Python.generate_data_3\" />\r\n        <item itemvalue=\"Python.genarate_data_2\" />\r\n        <item itemvalue=\"Python.Generate_data\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-python-sdk-2ee2454479a3-9cdd278e9d02-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.25410.122\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"8aaad01a-6789-4473-8554-48ed8e5a2809\" name=\"Changes\" comment=\"\" />\r\n      <created>1746717743036</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1746717743036</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"create data\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1746755931734</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1746755931734</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"SQL assessments\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1746758632564</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1746758632564</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"create data\" />\r\n    <MESSAGE value=\"SQL assessments\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"SQL assessments\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 2a53292702fdfa1d00d5220abe7a4c48e79c9141)
++++ b/.idea/workspace.xml	(date 1747062415174)
+@@ -4,13 +4,10 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="8aaad01a-6789-4473-8554-48ed8e5a2809" name="Changes" comment="SQL assessments">
+-      <change afterPath="$PROJECT_DIR$/genarate_data_2.py" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/generate_data_3.py" afterDir="false" />
++    <list default="true" id="8aaad01a-6789-4473-8554-48ed8e5a2809" name="Changes" comment="Python and SQL assessments">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Python_Assessments.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python_Assessments.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/SQL_assessments_questions.docx" beforeDir="false" afterPath="$PROJECT_DIR$/SQL_assessments_questions.docx" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/machine_output_with_dst.csv" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/SQL_Assessment_Questions_2.docx" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -55,24 +52,24 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "ModuleVcsDetector.initialDetectionPerformed": "true",
+-    "Python.Generate_data.executor": "Run",
+-    "Python.Python_Assessments.executor": "Run",
+-    "Python.genarate_data_2.executor": "Run",
+-    "Python.generate_data_3.executor": "Run",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.git.unshallow": "true",
+-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "git-widget-placeholder": "donggeng",
+-    "ignore.virus.scanning.warn.message": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
++    &quot;Python.Generate_data.executor&quot;: &quot;Run&quot;,
++    &quot;Python.Python_Assessments.executor&quot;: &quot;Run&quot;,
++    &quot;Python.genarate_data_2.executor&quot;: &quot;Run&quot;,
++    &quot;Python.generate_data_3.executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
++    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;donggeng&quot;,
++    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
+   },
+-  "keyToStringList": {
+-    "stardust.markdown.MarkdownSplitEditorSuppressor:keyList": []
++  &quot;keyToStringList&quot;: {
++    &quot;stardust.markdown.MarkdownSplitEditorSuppressor:keyList&quot;: []
+   }
+-}]]></component>
++}</component>
+   <component name="RunManager" selected="Python.Python_Assessments">
+     <configuration name="Generate_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+       <module name="Assessments_PythonProject" />
